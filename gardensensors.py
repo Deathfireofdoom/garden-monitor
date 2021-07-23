@@ -14,25 +14,25 @@ class GardenSensor():
 
     @property
     def all(self):
-	    self._update_sensors()
-            return {'hum': self.hum_value,
-                    'temp': self.temp_value,
-                    'soil': self.soil_value}
+        self._update_sensors()
+        return {'hum': self.hum_value,
+                'temp': self.temp_value,
+                'soil': self.soil_value}
 
     @property
     def temp(self):
-	    self._update_sensors()
-            return {'temp': self.temp_value}
+        self._update_sensors()
+        return {'temp': self.temp_value}
     
     @property
     def hum(self):
-	    self._update_sensors()
-            return {'hum': self.hum_value}
+        self._update_sensors()
+        return {'hum': self.hum_value}
 
     @property
     def soil(self):
-	    self._update_sensors()
-            return {'soil': self.hum_value}
+        self._update_sensors()
+        return {'soil': self.hum_value}
 
     def water_plants(self):
         GPIO.output(11, 1)
@@ -40,9 +40,9 @@ class GardenSensor():
         GPIO.output(11, 0)
     
     def _update_sensors(self):
-            self.temp_value = self.dht.temperature
-            self.hum_value = self.dht.humidity
-            self.soil_value = GPIO.input(14)
+        self.temp_value = self.dht.temperature
+        self.hum_value = self.dht.humidity
+        self.soil_value = GPIO.input(14)
 
 
     def save(self):
