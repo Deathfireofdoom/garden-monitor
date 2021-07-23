@@ -6,7 +6,8 @@ from time import sleep
 
 class GardenSensor():
     def __init__(self) -> None:
-        dht = adafruit_dht.DHT11(4)
+        print('hello')
+        self.dht = adafruit_dht.DHT11(4)
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(14, GPIO.IN)
         GPIO.setup(11, GPIO.OUT)
