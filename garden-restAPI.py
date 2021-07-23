@@ -29,4 +29,4 @@ api.add_resource(GardenMonitor, '/gardenmonitor/<string:selection>')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)
