@@ -15,7 +15,7 @@ class GardenSensor():
     @property
     def all(self):
 	    self._update_sensors()
-            return  {'hum': self.hum_value, 
+            return {'hum': self.hum_value,
                     'temp': self.temp_value,
                     'soil': self.soil_value}
 
@@ -37,7 +37,7 @@ class GardenSensor():
     def water_plants(self):
         GPIO.output(11, 1)
         sleep(5)
-        GPIP.output(11, 0)
+        GPIO.output(11, 0)
     
     def _update_sensors(self):
             self.temp_value = self.dht.temperature
