@@ -10,6 +10,7 @@ api = Api(app)
 class GardenMonitor(Resource):
     def __init__(self):
         super().__init__()
+    
     def get(self, selection='all'):
         sensors = GardenSensor()
         if selection == 'all':
@@ -23,6 +24,9 @@ class GardenMonitor(Resource):
 
         if selection == 'soil':
             return jsonify(sensors.soil)
+
+    def post(self):
+        print('hello')
 
 api.add_resource(GardenMonitor, '/gardenmonitor/<string:selection>')
 
