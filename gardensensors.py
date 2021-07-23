@@ -4,15 +4,15 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 
+global dht 
+dht = adafruit_dht.DHT11(4)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(13, GPIO.IN)
+GPIO.setup(11, GPIO.OUT)
+
 class GardenSensor():
     def __init__(self) -> None:
-        try:
-            self.dht = adafruit_dht.DHT11(4)
-            GPIO.setmode(GPIO.BCM)
-            GPIO.setup(13, GPIO.IN)
-            GPIO.setup(11, GPIO.OUT)
-        except Exception:
-            pass
+        pass
 
 
     @property
