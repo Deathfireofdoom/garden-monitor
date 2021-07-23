@@ -6,11 +6,13 @@ from time import sleep
 
 class GardenSensor():
     def __init__(self) -> None:
-        print('hello')
-        self.dht = adafruit_dht.DHT11(4)
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(14, GPIO.IN)
-        GPIO.setup(11, GPIO.OUT)
+        try:
+            self.dht = adafruit_dht.DHT11(4)
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setup(13, GPIO.IN)
+            GPIO.setup(11, GPIO.OUT)
+        except Exception:
+            pass
 
 
     @property
@@ -43,7 +45,7 @@ class GardenSensor():
     def _update_sensors(self):
         self.temp_value = self.dht.temperature
         self.hum_value = self.dht.humidity
-        self.soil_value = GPIO.input(14)
+        self.soil_value = GPIO.input(13)
 
 
     def save(self):
