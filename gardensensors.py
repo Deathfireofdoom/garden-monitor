@@ -43,8 +43,8 @@ class GardenSensor():
         GPIO.output(11, 0)
     
     def _update_sensors(self):
-        self.temp_value = self.dht.temperature
-        self.hum_value = self.dht.humidity
+        self.temp_value = dht.temperature
+        self.hum_value = dht.humidity
         self.soil_value = GPIO.input(13)
 
 
